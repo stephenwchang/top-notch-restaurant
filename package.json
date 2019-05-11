@@ -1,0 +1,23 @@
+{
+  "name": "top-notch-restaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenwchang/top-notch-restaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephenwchang/top-notch-restaurant/issues"
+  },
+  "homepage": "https://github.com/stephenwchang/top-notch-restaurant#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

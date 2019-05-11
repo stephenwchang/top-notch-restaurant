@@ -16,7 +16,6 @@ app.use(express.json());
 // =============================================================
 var customer = [
   {
-
     name: "Bob-Burger",
     phone: 9085322019,
     email: "bobburger@gmail.com",
@@ -29,49 +28,32 @@ var customer = [
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "view.html"));
+  res.sendFile(path.join(__dirname, "home.html"));
 });
 
-app.get("/add", function(req, res) {
-  res.sendFile(path.join(__dirname, "add.html"));
+app.get("/home", function(req, res) {
+  res.sendFile(path.join(__dirname, "home.html"));
 });
 
-// Displays all customers
-app.get("/api/customers", function(req, res) {
-  return res.json(customers);
+
+app.get("/reserve", function(req, res) {
+  res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-// Displays a single customer, or returns false
-app.get("/api/customers/:customer", function(req, res) {
-  var chosen = req.params.customer;
 
-  console.log(chosen);
-
-  for (var i = 0; i < customers.length; i++) {
-    if (chosen === customers[i].name) {
-      return res.json(customers[i]);
-    }
-  }
-
-  return res.json(false);
+app.get("/tables", function(req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-// Create New Customer - takes in JSON input
-app.post("/api/customers", function(req, res) {
-  // req.body hosts is equal to the JSON post sent from the user
-  // This works because of our body parsing middleware
-  var newcustomer = req.body;
 
-  // Using a RegEx Pattern to remove spaces from newcustomer
-  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newcustomer.name = newcustomer.name.replace(/\s+/g, "").toLowerCase();
+// Displays all characters
 
-  console.log(newcustomer);
 
-  customers.push(newcustomer);
+// Displays a single character, or returns false
 
-  res.json(newcustomer);
-});
+
+// Create New Characters - takes in JSON input
+
 
 // Starts the server to begin listening
 // =============================================================
