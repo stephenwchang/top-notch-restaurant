@@ -12,7 +12,7 @@ var PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Star Wars Characters (DATA)
+// Top Notch Restaurant Customers (DATA)
 // =============================================================
 var customer = [
   {
@@ -35,6 +35,7 @@ app.get("/home", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
 });
 
+
 app.get("/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
 });
@@ -43,6 +44,7 @@ app.get("/reserve", function(req, res) {
 app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
+
 
 // Displays all characters
 
