@@ -61,7 +61,7 @@ app.post("/api/tables", function(req, res) {
 
 
   customer.push(newReservation);
-
+  res.send(customer);
 });
 
 // Displays a single character, or returns false
