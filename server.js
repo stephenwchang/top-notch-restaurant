@@ -45,9 +45,24 @@ app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
+app.get("/api/tables", function(req, res) {
+  res.json(customer);
+});
+
 
 // Displays all characters
+app.post("/api/tables", function(req, res) {
+  // req.body hosts is equal to the JSON post sent from the user
+  // This works because of our body parsing middleware
+  var newReservation = req.body;
 
+  // Using a RegEx Pattern to remove spaces from newCharacter
+  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+
+
+  customer.push(newReservation);
+
+});
 
 // Displays a single character, or returns false
 
